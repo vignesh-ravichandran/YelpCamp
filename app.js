@@ -17,7 +17,16 @@ var commentRoutes	=require("./routes/comments"),
 
 	
 	
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb+srv://vignesh:milindavignesh@cluster0-97au8.mongodb.net/test?retryWrites=true&w=majority",{
+	useNewUrlParser:true,
+	useCreateIndex:true
+}).then(()=>{
+	
+	console.log("connected to db");
+	
+}).catch(err =>{
+	console.log('error: '+err.message);
+});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
