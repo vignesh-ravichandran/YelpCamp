@@ -1,0 +1,32 @@
+body{
+	background: purple;
+}
+
+#deleteform {
+	display: inline;
+	border: 30px solid black;
+	
+   
+}
+.thumbnail img{
+
+width: 100%;
+
+
+}
+ 
+
+.thumbnail{
+	padding: 0;
+}
+
+.thumbnail .caption-full {
+ 
+padding: 9px;
+
+}
+
+h4{
+	background: black;
+}
+
