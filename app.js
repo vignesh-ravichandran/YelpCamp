@@ -16,8 +16,8 @@ var commentRoutes	=require("./routes/comments"),
   
 
 	
-	
-mongoose.connect("mongodb+srv://vignesh:milindavignesh@cluster0-97au8.mongodb.net/test?retryWrites=true&w=majority",{
+// use eval command to execute .env file	
+mongoose.connect(process.env.MONGOCONSTR,{
 	useNewUrlParser:true,
 	useCreateIndex:true
 }).then(()=>{
@@ -39,7 +39,7 @@ app.use(flash());
 
 
 app.use(require("express-session")({
-	secret: "Start with why",
+	secret: process.env.SECRETSTR,
 	resave: false,
 	saveUninitialized:false
 }));
@@ -63,7 +63,9 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use(authRoutes);
 
-app.listen(process.env.PORT,process.env.IP,function(){console.log("app.started")});
+app.listen(3000,function(){console.log("app.started")
+						 
+						  });
 /*
 app.listen(3000, function(){
    console.log("The YelpCamp Server Has Started!");
